@@ -1,0 +1,12 @@
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\obj\Debug\MTDTests.csprojAssemblyReference.cache
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\obj\Debug\MTDTests.csproj.CoreCompileInputs.cache
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\bin\Debug\MTDTests.dll
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\bin\Debug\MTDTests.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\bin\Debug\MTDClasses.dll
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\bin\Debug\nunit.framework.dll
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\bin\Debug\MTDClasses.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\bin\Debug\nunit.framework.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\bin\Debug\nunit.framework.xml
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\obj\Debug\MTDTests.csproj.CopyComplete
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\obj\Debug\MTDTests.dll
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd\MTD\MTDTests\obj\Debug\MTDTests.pdb
