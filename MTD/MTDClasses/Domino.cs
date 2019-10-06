@@ -9,6 +9,7 @@ namespace MTDClasses
     [Serializable()]
     public class Domino
     {
+        // Private fields for the Domino object
         private int side1;
         private int side2;
 
