@@ -68,8 +68,8 @@ namespace MTDClasses
             }
         }
 
-        // The Indexer returns the position of the domino entered or sets the domino at
-        // a given position to the value entered
+        // The Indexer returns the domino based on a givne index entered or sets the 
+        // domino at a given position to the value entered
         public Domino this[int index]
         {
             get
