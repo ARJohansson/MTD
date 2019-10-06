@@ -98,8 +98,9 @@ namespace MTDClasses
         {
             return String.Format("Side 1: {0}  Side 2: {1}", side1, side2);
         }
-        
-        // overrides Equals so we can compare two domino objects directly
+
+        // overrides the Equals method that's defined by the Object class
+        // so we can compare two domino objects directly
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -116,7 +117,9 @@ namespace MTDClasses
             }
         }
 
-        //To override Equals() one must override GetHashCode()
+        // The GetHashCode mthod must be overriden because it needs to return the same 
+        // hash code for any two instances that are considered equal by the Equals method
+        // the GetHashCode method is also defined by the Object class
         public override int GetHashCode()
         {
             return ToString().GetHashCode();
