@@ -9,10 +9,6 @@ namespace MTDClasses
     public class PlayerTrain
     {
         /*
-        public PlayerTrain(Hand h): base()
-        {
-        }
-
         /// <summary>
         /// This is the most appropriate constructor for the class.
         /// </summary>
@@ -54,6 +50,17 @@ namespace MTDClasses
         /// <returns></returns>
         public override bool IsPlayable(Hand h, Domino d, out bool mustFlip)
         {
+            if (IsOpen || hand == h)
+            {
+                if (base.IsPlayable(d, out mustFlip))
+                    return true;
+                else
+                    return false;
+            }
+            else {
+                mustFlip = false;
+                return false;
+            }
         }
         */
     }

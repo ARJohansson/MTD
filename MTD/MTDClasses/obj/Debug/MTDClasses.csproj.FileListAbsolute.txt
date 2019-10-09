@@ -10,3 +10,9 @@ C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd2\MTD\MTDClasses\obj\Debug\
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.csproj.CoreCompileInputs.cache
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.dll
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.csprojAssemblyReference.cache
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.csproj.CoreCompileInputs.cache
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.dll
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\bin\Debug\MTDClasses.dll
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\bin\Debug\MTDClasses.pdb
