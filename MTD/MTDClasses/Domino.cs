@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MTDClasses
+namespace MTDClasses 
 {
     [Serializable()]
-    public class Domino
+    public class Domino : IComparable<Domino>
     {
         // Private fields for the Domino object
         private int side1;
@@ -125,6 +125,10 @@ namespace MTDClasses
         {
             return ToString().GetHashCode();
         }
-        
+
+        public int CompareTo(Domino other)
+        {
+            return this.Score.CompareTo(other.Score);
+        }
     }
 }

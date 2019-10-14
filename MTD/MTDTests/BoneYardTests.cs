@@ -114,5 +114,13 @@ namespace MTDTests
             Assert.AreNotEqual(d25, b10[24]);
             Assert.AreEqual(d25, b10[2]);
         }
+
+        [Test]
+        public void TestForEach()
+        {
+            BoneYard b = new BoneYard(6);
+            foreach (Domino d in b)
+                Console.WriteLine(d);
+        }
     }
 }

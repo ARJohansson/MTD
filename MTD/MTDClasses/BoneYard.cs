@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MTDClasses
 {
-    public class BoneYard
+    public class BoneYard : IEnumerable<Domino>
     {
         // private list field to create a new boneyard
         private List<Domino> boneyard;
@@ -91,6 +92,17 @@ namespace MTDClasses
                 output += boneyard[i] + "\n";
             }
             return output;
+        }
+
+        public IEnumerator<Domino> GetEnumerator()
+        {
+            foreach (Domino d in boneyard)
+                yield return d;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

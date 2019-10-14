@@ -148,5 +148,18 @@ namespace MTDTests
             Assert.True(d12.Equals(d21));
             Assert.False(d12.Equals(d33));
         }
+
+        [Test]
+        public void TestSort()
+        {
+            Domino[] dominos = new Domino[3];
+            dominos[0] = new Domino(0, 0);
+            dominos[1] = new Domino(6, 6);
+            dominos[2] = new Domino(3, 2);
+
+            Array.Sort<Domino>(dominos);
+            foreach (Domino d in dominos)
+                Console.WriteLine(d);
+        }
     }
 }

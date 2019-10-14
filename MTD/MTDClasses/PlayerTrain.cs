@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MTDClasses
 {
-    public class PlayerTrain
+    public class PlayerTrain : Train
     {
-        /*
+        private Hand hand = new Hand();
+        private bool isOpen;
+        
         /// <summary>
         /// This is the most appropriate constructor for the class.
         /// </summary>
@@ -16,6 +18,8 @@ namespace MTDClasses
         /// <param name="engineValue">Represents the first playable value on the train</param>
         public PlayerTrain(Hand h, int engineValue) : base (engineValue)
         {
+            hand = h;
+            Close();
         }
 
         /// <summary>
@@ -24,6 +28,10 @@ namespace MTDClasses
         /// </summary>
         public bool IsOpen
         {
+            get
+            {
+                return isOpen;
+            }
         }
 
         /// <summary>
@@ -31,6 +39,7 @@ namespace MTDClasses
         /// </summary>
         public void Open()
         {
+            isOpen = true;
         }
 
         /// <summary>
@@ -38,6 +47,7 @@ namespace MTDClasses
         /// </summary>
         public void Close()
         {
+            isOpen = false;
         }
 
         /// <summary>
@@ -62,6 +72,6 @@ namespace MTDClasses
                 return false;
             }
         }
-        */
+        
     }
 }

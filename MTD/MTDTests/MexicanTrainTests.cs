@@ -19,11 +19,12 @@ namespace MTDTests
         MexicanTrain m12;
         MexicanTrain m0;
         MexicanTrain m4;
+        MexicanTrain m04;
         Domino d12_4;
         Domino d04;
-        Domino d48;
+        Domino d52;
+        Hand h;
 
-        
         // Instantiates all of the instance variables before any of the tests run
         // runs and resets the variables every time a test finishes
         [SetUp]
@@ -32,32 +33,167 @@ namespace MTDTests
             m12 = new MexicanTrain(12);
             m0 = new MexicanTrain(0);
             m4 = new MexicanTrain(4);
+            m04 = new MexicanTrain(0);
 
             d12_4 = new Domino(12, 4);
             d04 = new Domino(0, 4);
-            d48 = new Domino(4, 8);
+            d52 = new Domino(4, 8);
+            d52 = new Domino(5, 2);
+
+            h = new Hand();
+
+            m04.Add(d04);
         }
 
-        // Tests the getters
         [Test]
-        public void TestAllGetters()
+        public void OverloadedConstructor()
+        {
+            MexicanTrain m = new MexicanTrain(3);
+            Assert.AreEqual(m.EngineValue, 3);
+            Assert.AreNotEqual(m.EngineValue, 10);
+        }
+
+        [Test]
+        public void EngineValueTest()
+        {
+            // tests EngineValue
+            Assert.AreEqual(12, m12.EngineValue);
+            Assert.AreNotEqual(3, m4.EngineValue);
+        }
+
+        [Test]
+        public void CountTest()
         {
             // tests Count
             Assert.AreEqual(0, m12.Count);
-            // tests EngineValue
-            Assert.AreEqual(12, m12.EngineValue);
+            Assert.AreNotEqual(3, m0);
+        }
+        [Test]
+        public void IsEmptyTest()
+        {
             // tests IsEmpty
             Assert.True(m0.IsEmpty);
-            m0.Add(d04);
-            Assert.False(m0.IsEmpty);
+            Assert.False(m04.IsEmpty);
+        }
+        [Test]
+        public void LastDominTest()
+        {
             // tests LastDomino
             Assert.Null(m12.LastDomino);
-            Assert.AreEqual(d04, m0.LastDomino);
+            Assert.AreEqual(d04, m04.LastDomino);
+            m04.Add(d52);
+            Assert.AreNotEqual(d04, m04.LastDomino);
+        }
+        [Test]
+        public void PlayableValueTest()
+        {
+            m4.Add(d04);
+            m4.Add(d12_4);
+            m4.Add(d52);
             // tests PlayableValue
-            Assert.AreEqual(4, m0.PlayableValue);
+            Assert.AreEqual(4, m04.PlayableValue);
+            Assert.AreNotEqual(m04.PlayableValue, m4.PlayableValue);
+            Assert.AreEqual(8, m4.PlayableValue);
+
+        }
+
+        [Test]
+        public void AddTest()
+        {
+            Assert.AreEqual(d04, m04.LastDomino);
+            m04.Add(d12_4);
+            Assert.AreNotEqual(d04, m04.LastDomino);
+        }
+
+        [Test]
+        public void IndexerTest()
+        {
             // tests Indexer
-            m0.Add(d48);
-            Assert.AreEqual(d48, m0[1]);
+            m04.Add(d52);
+            m4.Add(d52);
+            Assert.AreEqual(d52, m04[1]);
+            Assert.AreNotEqual(d04, m4[0]);
+        }
+
+
+        [Test]
+        public void IsPlayableAbstractTest1()
+        {
+            bool mustFlip = false;
+
+            // using enginevalue and is playable and no flip
+            Assert.IsTrue(m4.IsPlayable(h, d52, out mustFlip));
+            Assert.IsFalse(mustFlip);
+        }
+
+
+        [Test]
+        public void IsPlayableAbstractTest2()
+        {
+            bool mustFlip = false;
+            //using enginevalue and is not playable and no flip
+            Assert.IsFalse(m4.IsPlayable(h, d52, out mustFlip));
+            Assert.IsFalse(mustFlip);
+        }
+
+
+        [Test]
+        public void IsPlayableAbstractTest3()
+        {
+            bool mustFlip = false;
+            // using domino value and is playable and no flip
+            Assert.IsTrue(m04.IsPlayable(h, d52, out mustFlip));
+            Assert.IsFalse(mustFlip);
+        }
+
+
+        [Test]
+        public void IsPlayableAbstractTes4t()
+        {
+            bool mustFlip = false;
+
+            // using domino value and is not playable and no flip
+            Assert.IsFalse(m04.IsPlayable(h, d52, out mustFlip));
+            Assert.IsFalse(mustFlip);
+        }
+
+        [Test]
+        public void IsPlayableAbstractTest5()
+        {
+            bool mustFlip = true;
+
+            //using engine value and is playable and flip
+            Assert.IsTrue(m4.IsPlayable(h, d12_4, out mustFlip));
+            Assert.IsTrue(mustFlip);
+
+        }
+
+        [Test]
+        public void IsPlayableAbstractTest6()
+        {
+            bool mustFlip = true;
+
+            // using domino value and is playable and flip
+            Assert.IsTrue(m04.IsPlayable(h, d12_4, out mustFlip));
+            Assert.IsTrue(mustFlip);
+        }
+
+        [Test]
+        public void PlayTest() {
+
+            Domino d06 = new Domino(0, 6);
+
+            m4.Play(h, d04);
+
+            Assert.AreEqual(m4.LastDomino.Side1, d04.Side1);
+            Assert.AreEqual(m4.LastDomino.Side2, d04.Side2);
+
+            m4.Play(h, d06);
+
+            Assert.AreEqual(m4.LastDomino.Side1, d06.Side1);
+            Assert.AreEqual(m4.LastDomino.Side2, d06.Side2);
+
+            Assert.Throws<Exception>(() => m04.Play(h, new Domino(3, 5) ));
         }
     }
 }
