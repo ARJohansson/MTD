@@ -7,12 +7,20 @@ using System.Threading.Tasks;
 
 namespace MTDClasses
 {
+    /// <summary>
+    /// A list of dominos very much like a deck of cards
+    /// </summary>
     public class BoneYard : IEnumerable<Domino>
     {
-        // private list field to create a new boneyard
+        /// <summary>
+        /// private list field to create a new boneyard
+        /// </summary>
         private List<Domino> boneyard;
 
-        // overloaded BoneYard constructor, accepts a max number of dominos
+        /// <summary>
+        ///  overloaded BoneYard constructor, accepts a max number of dominos
+        /// </summary>
+        /// <param name="maxDots"></param>
         public BoneYard(int maxDots)
         {
             // instantiates the new list
@@ -29,8 +37,10 @@ namespace MTDClasses
             }
         }
 
-        // Shuffles through the BoneYard using a random generator
-        // this is more effective with a large deck, but still works with smaller decks
+        /// <summary>
+        /// Shuffles through the BoneYard using a random generator
+        /// this is more effective with a large deck, but still works with smaller decks
+        /// </summary>
         public void Shuffle()
         {
             // instantiates the random generator
@@ -45,14 +55,22 @@ namespace MTDClasses
             }
         }
 
-        // Boolean method checks to see if the list is empty, returns true if it is.
-        // uses the lambda operator
+        /// <summary>
+        ///Boolean method checks to see if the list is empty, returns true if it is.
+        /// uses the lambda operator
+        /// </summary>
+        /// <returns></returns>
         public bool IsEmpty() => (boneyard.Count == 0) ? true : false;
 
-        // Gets and returns the number of dominos in the boneyard using the lambda operator
+        /// <summary>
+        /// Gets and returns the number of dominos in the boneyard using the lambda operator
+        /// </summary>
         public int DominosRemaining => ( boneyard.Count);
-        
-        // Draws a domino from the top of the List
+
+        /// <summary>
+        ///  Draws a domino from the top of the List
+        /// </summary>
+        /// <returns></returns>
         public Domino Draw()
         {
             // Only draws from the list if there are dominos in it
@@ -69,8 +87,12 @@ namespace MTDClasses
             }
         }
 
-        // The Indexer returns the domino based on a givne index entered or sets the 
-        // domino at a given position to the value entered
+        /// <summary>
+        ///  The Indexer returns the domino based on a givne index entered or sets the 
+        /// domino at a given position to the value entered
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public Domino this[int index]
         {
             get
@@ -83,7 +105,10 @@ namespace MTDClasses
             }
         }
 
-        // Overrides the ToString() method to print the domino list
+        /// <summary>
+        ///  Overrides the ToString() method to print the domino list
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string output = "";
@@ -94,12 +119,21 @@ namespace MTDClasses
             return output;
         }
 
+        /// <summary>
+        /// Necessary method in order to allow a foreach loop in tests
+        /// part ofthe IEnumerator interface
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<Domino> GetEnumerator()
         {
             foreach (Domino d in boneyard)
                 yield return d;
         }
 
+        /// <summary>
+        /// Necessary method for IEnumerator Interface, doesn't have to do anything
+        /// </summary>
+        /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             throw new NotImplementedException();

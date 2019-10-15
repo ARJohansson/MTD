@@ -16,3 +16,4 @@ C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\ob
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\obj\Debug\MTDClasses.pdb
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\bin\Debug\MTDClasses.dll
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\bin\Debug\MTDClasses.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDClasses\bin\Debug\MTDClasses.xml
