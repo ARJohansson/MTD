@@ -48,6 +48,8 @@ namespace MTDTests
         [Test]
         public void OverloadedConstructor()
         {
+            // Tests the constructor, it should change the engine
+            //  value to three, not add three dominos to the train
             MexicanTrain m = new MexicanTrain(3);
             Assert.AreEqual(m.EngineValue, 3);
             Assert.AreNotEqual(m.EngineValue, 10);
@@ -56,7 +58,7 @@ namespace MTDTests
         [Test]
         public void EngineValueTest()
         {
-            // tests EngineValue
+            // tests EngineValue of two mexican trains
             Assert.AreEqual(12, m12.EngineValue);
             Assert.AreNotEqual(3, m4.EngineValue);
         }
@@ -64,7 +66,7 @@ namespace MTDTests
         [Test]
         public void CountTest()
         {
-            // tests Count
+            // tests Count any new train should have a count of 0
             Assert.AreEqual(0, m12.Count);
             Assert.AreNotEqual(3, m0);
         }
@@ -78,12 +80,15 @@ namespace MTDTests
         [Test]
         public void LastDominTest()
         {
-            // tests LastDomino
+            // tests the null return if an empty train is passed
+            // to the LastDomino method
             Assert.Null(m12.LastDomino);
+            //Test the LastDomino method with a non-empty train
             Assert.AreEqual(d04, m04.LastDomino);
             m04.Add(d52);
             Assert.AreNotEqual(d04, m04.LastDomino);
         }
+
         [Test]
         public void PlayableValueTest()
         {
@@ -100,6 +105,7 @@ namespace MTDTests
         [Test]
         public void AddTest()
         {
+            //tests adding a domino to a train
             Assert.AreEqual(d04, m04.LastDomino);
             m04.Add(d12_4);
             Assert.AreNotEqual(d04, m04.LastDomino);
@@ -180,19 +186,30 @@ namespace MTDTests
 
         [Test]
         public void PlayTest() {
-
+            // Testing play by adding a domino whose side needs to flip
             Domino d06 = new Domino(0, 6);
 
             m4.Play(h, d04);
 
             Assert.AreEqual(m4.LastDomino.Side1, d04.Side1);
             Assert.AreEqual(m4.LastDomino.Side2, d04.Side2);
+        }
 
+        [Test]
+        public void PlayTest2() {
+            // Testing play by adding a domino whose side doesn't need to flip
+            Domino d06 = new Domino(0, 6);
+            m4.Play(h, d04);
             m4.Play(h, d06);
 
             Assert.AreEqual(m4.LastDomino.Side1, d06.Side1);
             Assert.AreEqual(m4.LastDomino.Side2, d06.Side2);
+        }
 
+        [Test]
+        public void PlayTest3() { 
+            // Testing play that throws an exception because the domino does not
+            // have a playable value
             Assert.Throws<Exception>(() => m04.Play(h, new Domino(3, 5) ));
         }
     }

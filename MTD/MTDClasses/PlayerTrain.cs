@@ -62,6 +62,8 @@ namespace MTDClasses
         {
             if (IsOpen || hand == h)
             {
+                // Uses the base method so long as the hand is ours
+                // OR the train is open
                 if (base.IsPlayable(d, out mustFlip))
                     return true;
                 else
