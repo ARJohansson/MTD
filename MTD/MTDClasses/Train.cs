@@ -16,6 +16,9 @@ namespace MTDClasses
         /// Fields for the Train Class
         /// </summary>
         protected List<Domino> dominos = new List<Domino>();
+        /// <summary>
+        /// Second field for the Train Class
+        /// </summary>
         protected int engineValue;
 
         /// <summary>
@@ -172,7 +175,9 @@ namespace MTDClasses
             }
         }
 
-        // assumes the domino has already been removed from the hand
+        /// <summary>
+        ///assumes the domino has already been removed from the hand
+        /// </summary>
         public void Play(Hand h, Domino d)
         {
             bool mustFlip = false;
@@ -189,6 +194,11 @@ namespace MTDClasses
                 throw new Exception("Domino " + d.ToString() + " does not match last domino in the train and cannot be played.");
         }
 
+        /// <summary>
+        /// Overriden ToString that uses the dominos ToString method to create a 
+        /// string of dominos in a train
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string output = "";

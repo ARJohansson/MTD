@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MTDClasses
 {
+    /// <summary>
+    /// Represents the Player Train which inherits from the generic Train class
+    /// </summary>
     public class PlayerTrain : Train
     {
         private Hand hand = new Hand();

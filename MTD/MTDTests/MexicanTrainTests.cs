@@ -23,6 +23,7 @@ namespace MTDTests
         Domino d12_4;
         Domino d04;
         Domino d52;
+        Domino d48;
         Hand h;
 
         // Instantiates all of the instance variables before any of the tests run
@@ -37,7 +38,7 @@ namespace MTDTests
 
             d12_4 = new Domino(12, 4);
             d04 = new Domino(0, 4);
-            d52 = new Domino(4, 8);
+            d48 = new Domino(4, 8);
             d52 = new Domino(5, 2);
 
             h = new Hand();
@@ -94,7 +95,7 @@ namespace MTDTests
         {
             m4.Add(d04);
             m4.Add(d12_4);
-            m4.Add(d52);
+            m4.Add(d48);
             // tests PlayableValue
             Assert.AreEqual(4, m04.PlayableValue);
             Assert.AreNotEqual(m04.PlayableValue, m4.PlayableValue);
@@ -128,7 +129,7 @@ namespace MTDTests
             bool mustFlip = false;
 
             // using enginevalue and is playable and no flip
-            Assert.IsTrue(m4.IsPlayable(h, d52, out mustFlip));
+            Assert.IsTrue(m4.IsPlayable(h, d48, out mustFlip));
             Assert.IsFalse(mustFlip);
         }
 
@@ -148,7 +149,7 @@ namespace MTDTests
         {
             bool mustFlip = false;
             // using domino value and is playable and no flip
-            Assert.IsTrue(m04.IsPlayable(h, d52, out mustFlip));
+            Assert.IsTrue(m04.IsPlayable(h, d48, out mustFlip));
             Assert.IsFalse(mustFlip);
         }
 
