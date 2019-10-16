@@ -11,16 +11,25 @@ namespace MTDClasses
     /// </summary>
     public class Hand
     {
-        /*
         /// <summary>
         /// The list of dominos in the hand
         /// </summary>
+        private List<Domino> handOfDominos;
+
+        public delegate void EmptyHandler(Hand j);
+        public event EmptyHandler Empty;
+
+        public void HandleEmpty(Hand h)
+        {
+        }
 
         /// <summary>
         /// Creates an empty hand
         /// </summary>
         public Hand()
         {
+            handOfDominos = new List<Domino>();
+            Empty = new EmptyHandler(HandleEmpty);
         }
 
         /// <summary>
@@ -34,19 +43,52 @@ namespace MTDClasses
         /// <param name="numPlayers"></param>
         public Hand(BoneYard by, int numPlayers)
         {
+            Empty = new EmptyHandler(HandleEmpty);
+            handOfDominos = new List<Domino>();
+            int numDominos;
+            switch (numPlayers)
+            {
+                case 2:
+                case 3:
+                case 4:
+                    numDominos = 10;
+                    break;
+                case 5:
+                case 6:
+                    numDominos = 9;
+                    break;
+                case 7:
+                case 8:
+                    numDominos = 7;
+                    break;
+                default:
+                    numDominos = 5;
+                    break;
+            }
+            for (int i = 0; i < numDominos; i++)
+                handOfDominos.Add(by.Draw());
         }
 
         public void Add(Domino d)
         {
+            handOfDominos.Add(d);
         }
 
 
         public int Count
         {
+            get
+            {
+                return handOfDominos.Count;
+            }
         }
 
         public bool IsEmpty
         {
+            get
+            {
+                return Count == 0;
+            }
         }
 
         /// <summary>
@@ -54,6 +96,14 @@ namespace MTDClasses
         /// </summary>
         public int Score
         {
+            get
+            {
+                int score = 0;
+                foreach (Domino d in handOfDominos)
+                    score += d.Score;
+                return score;
+
+            }
         }
 
         /// <summary>
@@ -62,6 +112,10 @@ namespace MTDClasses
         /// <param name="value">The number of dots on one side of the domino that you're looking for</param>
         public bool HasDomino(int value)
         {
+            foreach (Domino d in handOfDominos)
+                if (d.Side1 == value || d.Side2 == value)
+                    return true;
+            return false;
         }
 
         /// <summary>
@@ -70,6 +124,10 @@ namespace MTDClasses
         /// <param name="value">The number of (double) dots that you're looking for</param>
         public bool HasDoubleDomino(int value)
         {
+            foreach (Domino d in handOfDominos)
+                if (d.Side1 == value && d.Side2 == value)
+                    return true;
+            return false;
         }
 
         /// <summary>
@@ -79,6 +137,14 @@ namespace MTDClasses
         /// <returns>-1 if the domino doesn't exist in the hand</returns>
         public int IndexOfDomino(int value)
         {
+            int i = 0;
+            foreach (Domino d in handOfDominos)
+            {
+                if (d.Side1 == value || d.Side2 == value)
+                    return i;
+                i++;
+            }
+            return -1;
         }
 
         /// <summary>
@@ -88,6 +154,14 @@ namespace MTDClasses
         /// <returns>-1 if the domino doesn't exist in the hand</returns>
         public int IndexOfDoubleDomino(int value)
         {
+            int i = 0;
+            foreach (Domino d in handOfDominos)
+            {
+                if (d.Side1 == value && d.Side2 == value)
+                    return i;
+                i++;
+            }
+            return -1;
         }
 
         /// <summary>
@@ -96,14 +170,29 @@ namespace MTDClasses
         /// <returns>-1 if there isn't a double in the hand</returns>
         public int IndexOfHighDouble()
         {
+            for (int i = 12; i >= 0; i--)
+            {
+                int indexOfHigh = IndexOfDoubleDomino(i);
+                if (indexOfHigh != -1)
+                    return indexOfHigh;
+            }
+            return -1;
         }
 
         public Domino this[int index]
         {
+            get
+            {
+                return handOfDominos[index];
+            }
+
         }
 
         public void RemoveAt(int index)
         {
+            handOfDominos.RemoveAt(index);
+            if (handOfDominos.Count == 0)
+                Empty(this);
         }
 
         /// <summary>
@@ -115,6 +204,21 @@ namespace MTDClasses
         /// <returns></returns>
         public Domino GetDomino(int value)
         {
+            int position = IndexOfDomino(value);
+            if (position == -1)
+                return null;
+            else
+            {
+                Domino d = handOfDominos[position];
+                RemoveAt(position);
+                if (d.Side1 == value)
+                    return d;
+                else
+                {
+                    d.Flip();
+                    return d;
+                }
+            }
         }
 
         /// <summary>
@@ -126,6 +230,15 @@ namespace MTDClasses
         /// <returns></returns>
         public Domino GetDoubleDomino(int value)
         {
+            int position = IndexOfDoubleDomino(value);
+            if (position == -1)
+                return null;
+            else
+            {
+                Domino d = handOfDominos[position];
+                RemoveAt(position);
+                return d;
+            }
         }
 
         /// <summary>
@@ -134,6 +247,7 @@ namespace MTDClasses
         /// <param name="by"></param>
         public void Draw(BoneYard by)
         {
+            Add(by.Draw());
         }
 
         /// <summary>
@@ -147,6 +261,19 @@ namespace MTDClasses
         /// <param name="t"></param>
         private void Play(int index, Train t)
         {
+            bool mustFlip = false;
+            Domino d = handOfDominos[index];
+            if (t.IsPlayable(this, d, out mustFlip))
+            {
+                RemoveAt(index);
+                if (mustFlip)
+                    d.Flip();
+                t.Play(this, d);
+            }
+            else
+            {
+                throw new Exception("Domino " + d.ToString() + " cannot be played on this train.");
+            }
         }
 
         /// <summary>
@@ -158,6 +285,11 @@ namespace MTDClasses
         /// </summary>
         public void Play(Domino d, Train t)
         {
+            int index = handOfDominos.IndexOf(d);
+            if (index != -1)
+            {
+                Play(index, t);
+            }
         }
 
         /// <summary>
@@ -170,11 +302,31 @@ namespace MTDClasses
         /// <returns></returns>
         public Domino Play(Train t)
         {
+            int playableValue = t.PlayableValue;
+            int index = IndexOfDomino(playableValue);
+            if (index != -1)
+            {
+                Domino playable = this[index];
+                Play(index, t);
+                return playable;
+            }
+            else
+            {
+                throw new Exception("No play from this hand on this train.");
+            }
         }
 
         public override string ToString()
         {
+            string output = "";
+            int index = 0;
+            foreach (Domino d in handOfDominos)
+            {
+                output += index + ": " + d.ToString() + "\n";
+                index++;
+            }
+            output += "\n";
+            return output;
         }
-        */
     }
 }

@@ -34,3 +34,4 @@ C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDTests\bin\
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDTests\bin\Debug\nunit.framework.pdb
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDTests\bin\Debug\nunit.framework.xml
 C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDTests\obj\Debug\MTDTests.csproj.CopyComplete
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDTests\bin\Debug\MTDClasses.xml
