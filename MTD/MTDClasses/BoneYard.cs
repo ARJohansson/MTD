@@ -12,6 +12,13 @@ namespace MTDClasses
     /// </summary>
     public class BoneYard : IEnumerable<Domino>
     {
+        public delegate void EmptyHandler(BoneYard by);
+        public event EmptyHandler Empty;
+
+        public void HandleEmpty(BoneYard b)
+        {
+        }
+
         /// <summary>
         /// private list field to create a new boneyard
         /// </summary>
@@ -35,6 +42,7 @@ namespace MTDClasses
                     boneyard.Add(new Domino(side1, side2));
                 }
             }
+            Empty = new EmptyHandler(HandleEmpty);
         }
 
         /// <summary>
@@ -78,6 +86,8 @@ namespace MTDClasses
             {
                 Domino d = boneyard[0];
                 boneyard.RemoveAt(0);
+                if (IsEmpty())
+                    Empty(this);
                 return d;
             }
             else

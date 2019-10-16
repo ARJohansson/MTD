@@ -1,0 +1,28 @@
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\bin\Debug\MTDUserInterface.exe.config
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\bin\Debug\MTDUserInterface.exe
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\bin\Debug\MTDUserInterface.pdb
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\bin\Debug\MTDClasses.dll
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\bin\Debug\MTDClasses.pdb
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\bin\Debug\MTDClasses.xml
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.csprojAssemblyReference.cache
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.PlayMTDRightClick.resources
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.Properties.Resources.resources
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.GenerateResource.cache
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CoreCompileInputs.cache
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CopyComplete
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.exe
+C:\Courses\CS234CSharp\Demos\MexicanTrainDominosBetter\MTDUserInterface\obj\Debug\MTDUserInterface.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csprojAssemblyReference.cache
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.PlayMTDRightClick.resources
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.Properties.Resources.resources
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.GenerateResource.cache
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CoreCompileInputs.cache
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.exe
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.exe.config
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.exe
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\bin\Debug\MTDUserInterface.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\bin\Debug\MTDClasses.dll
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\bin\Debug\MTDClasses.pdb
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\bin\Debug\MTDClasses.xml
+C:\Users\Ashley Johansson\Documents\Lanecc\CS234N\Lab0MTD\mtd2\MTD\MTDUserInterface\obj\Debug\MTDUserInterface.csproj.CopyComplete
